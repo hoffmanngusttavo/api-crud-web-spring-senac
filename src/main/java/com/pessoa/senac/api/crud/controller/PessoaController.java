@@ -33,7 +33,16 @@ public class PessoaController {
      * */
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public void processarFormulario(@RequestBody Pessoa pessoa) {
+    public void cadastrar(@RequestBody Pessoa pessoa) {
+        repository.save(pessoa);
+    }
+
+    /**
+     * Faça o processamento necessário com os dados recebidos
+     * */
+    @PutMapping
+    @ResponseStatus(HttpStatus.OK)
+    public void editar(@RequestBody Pessoa pessoa) {
         repository.save(pessoa);
     }
 
