@@ -60,7 +60,7 @@ public class PessoaController {
      * */
     @GetMapping("/{id}")
     public Pessoa obterRegistroPorId(@PathVariable Long id) {
-        return repository.findById(id).get();
+        return repository.findById(id).orElse(null);
     }
 
 }
