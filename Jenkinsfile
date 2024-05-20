@@ -19,11 +19,11 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-                sh 'mvn -B -DskipTests clean package' 
+                sh 'mvn -B -DskipTests clean install'
             }
         }
 
-    stage('Test') {
+        stage('Test') {
 
             when {
                 expression { return params.RUN_TESTS }
@@ -44,13 +44,11 @@ pipeline {
         }
 
 
-    stage('Deliver') {
-            steps {
-                sh './jenkins/scripts/deliver.sh'
-            }
-        }
-
-
+        //stage('Deliver') {
+           // steps {
+             //   sh './jenkins/scripts/deliver.sh'
+            //}
+        //}
     }    
 
 }
