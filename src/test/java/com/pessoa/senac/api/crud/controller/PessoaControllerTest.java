@@ -23,11 +23,11 @@ import static org.junit.jupiter.api.Assertions.*;
 class PessoaControllerTest {
 
     @InjectMocks
-    PessoaController controller;
+    private PessoaController controller;
 
 
     @MockBean
-    PessoaRepository repository;
+    private PessoaRepository repository;
 
     @Test
     void deveBuscarRegistros() {
